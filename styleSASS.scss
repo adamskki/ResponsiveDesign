@@ -1,8 +1,9 @@
 $mobile-max: 599px;
-$tablet-max: 1024;
-$tablet-min: 600;
+$tablet-max: 1024px;
+$tablet-min: 600px;
 $full-size: 100%;
 $margin-size: 15px;
+$font-size: 16px;
 
 @mixin flex-column {
     display: flex;
@@ -24,7 +25,7 @@ $margin-size: 15px;
     margin: 0;
     padding: 0;
     font-family: Verdana;
-    font-size: 16px;
+    font-size: $font-size;
     color: black;
     text-decoration: none;
     font-weight: normal;
@@ -41,16 +42,138 @@ body {
 
     .content {
         flex: 1 0 auto;
+
+        header {
+            @include flex-row;
+            margin: $margin-size*2;
+            align-items: center;
+        
+            .title {
+                margin-left: $margin-size;
+                font-weight: bold;
+                font-size: $font-size*2;
+            }
+        
+            .nav-header {
+                display: flex;
+                flex-grow: 2;
+                align-self: flex-start;
+                justify-content: flex-end;
+        
+                a {
+                    width: 100px;
+                }
+
+                #last {
+                    width: 50px;
+                }
+
+                #menu {
+                    display: none;
+                }
+            }
+
+            @media all and (max-width: $mobile-max) {
+                justify-content: space-between;
+
+                    .title {
+                        display: none;
+                    }
+            
+                    .nav-header {
+                        a {
+                            display: none;
+                        }
+
+                        #menu {
+                            display: block; 
+                        }
+                    }
+            }
+
+            @media (max-width:$tablet-max) and (min-width:$tablet-min) {
+
+                .nav-header {
+                    a {
+                        display: none;
+                    }
+
+                    #menu {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        main {
+            @include flex-row;
+            margin: $margin-size;
+
+            @media all and (max-width: $mobile-max) {
+                flex-wrap: wrap;
+            }
+
+            
+            @media (max-width:$tablet-max) and (min-width:$tablet-min) {
+                flex-wrap: wrap;
+        
+                article {
+                    flex: 1 0 40%;
+                }
+
+                article:first-child {
+                    flex: 0 1 100%;
+                }  
+            }
+
+            article {
+                @include flex-column;
+                margin: $margin-size;
+                width: $full-size;
+                border: 2px solid black;
+                align-items: flex-end;
+                background-color: #c6ecd8;
+
+                h1 {
+                    border-left: 2px solid black;
+                    border-bottom: 2px solid black;
+                    height: 50px;
+                    width: $full-size/2;
+                    font-size: 1.5em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .article-title1 {
+                    background-color: #00BFFF;
+                }
+
+                .article-title2 {
+                    background-color: #FF8C00;
+                }
+
+                .article-title3 {
+                    background-color: #FFB6C1;
+                }
+                
+                p {
+                    text-align: justify;
+                    padding: 15px;
+                }
+            }
+            
+            
+        }
     }
 
     footer {
         @include flex-column;
         align-items: center;
-        background-color: khaki;
+        background-color: #c6ecd8;
         height: 100px;
         border-top: 2px black solid;
-        margin-top: 15px;
-        align-items: center;
+        margin-top: $margin-size;
         justify-content: center;
         flex-shrink: 0;
     
@@ -62,135 +185,8 @@ body {
             }
         }
     }
-    
-}
-
-header {
-    
-    @include flex-row;
-    margin: $margin-size*2;
-    align-items: center;
-
-    .title {
-        margin-left: $margin-size;
-        font-weight: bold;
-        font-size: 32px;
-    }
-
-    .nav-header {
-        flex-grow: 2;
-        align-self: flex-start;
-        display: flex;
-        justify-content: flex-end;
-
-        a {
-            margin: 0px 75px;
-        }
-
-        .menu-header{
-            #menu {
-                display: none;
-            }
-        }
-    }
-}
-
-main {
-    @include flex-row;
-    margin: $margin-size;
-
-    article {
-        @include flex-column;
-        margin: $margin-size;
-        width: $full-size;
-        border: 2px solid black;
-        align-items: flex-end;
-
-        .article-title {
-            height: 50px;
-            width: $full-size/2;
-            font-size: 1.5em;
-            text-align: center;
-            background-color: khaki;
-            @include box-title;
-        }
-
-        p {
-            text-align: justify;
-            padding: 15px;
-        }
-    }
-}
-
-
-@media all and (max-width: 599px) {
-    main {
-    flex-wrap: wrap;
-    }
-
-    header {
-
-        justify-content: space-between;
-
-        .title {
-            display: none;
-        }
-
-        .nav-header {
-            a {
-                display: none;
-            }
-
-            .menu-header {
-                #menu {
-                    display: block;
-                }
-            }
-        }
-    }
-
-    footer {
-        display: none;
-    }
 
     
-
 }
 
-@media (max-width:1024px) and (min-width:600px) {
-
-    header {
-
-        justify-content: space-between;
-
-        .nav-header {
-            a {
-                display: none;
-            }
-            .menu-header {
-                #menu {
-                    display: block;
-                    justify-self: left;
-                    flex-grow: 2;
-                }
-            }
-            
-        }
-    }
-    
-    main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    main article {
-        flex: 1 0 40%;
-      }
-
-    main article:first-child {
-        flex: 0 1 100%;
-    }  
-
-}
 

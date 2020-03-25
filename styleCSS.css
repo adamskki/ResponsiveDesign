@@ -21,15 +21,115 @@ body {
 body .content {
   flex: 1 0 auto;
 }
+body .content header {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  align-items: center;
+}
+body .content header .title {
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 32px;
+}
+body .content header .nav-header {
+  display: flex;
+  flex-grow: 2;
+  align-self: flex-start;
+  justify-content: flex-end;
+}
+body .content header .nav-header a {
+  width: 100px;
+}
+body .content header .nav-header #last {
+  width: 50px;
+}
+body .content header .nav-header #menu {
+  display: none;
+}
+@media all and (max-width: 599px) {
+  body .content header {
+    justify-content: space-between;
+  }
+  body .content header .title {
+    display: none;
+  }
+  body .content header .nav-header a {
+    display: none;
+  }
+  body .content header .nav-header #menu {
+    display: block;
+  }
+}
+@media (max-width: 1024px) and (min-width: 600px) {
+  body .content header .nav-header a {
+    display: none;
+  }
+  body .content header .nav-header #menu {
+    display: block;
+  }
+}
+body .content main {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+@media all and (max-width: 599px) {
+  body .content main {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1024px) and (min-width: 600px) {
+  body .content main {
+    flex-wrap: wrap;
+  }
+  body .content main article {
+    flex: 1 0 40%;
+  }
+  body .content main article:first-child {
+    flex: 0 1 100%;
+  }
+}
+body .content main article {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 100%;
+  border: 2px solid black;
+  align-items: flex-end;
+  background-color: #c6ecd8;
+}
+body .content main article h1 {
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  height: 50px;
+  width: 50%;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .content main article .article-title1 {
+  background-color: #00BFFF;
+}
+body .content main article .article-title2 {
+  background-color: #FF8C00;
+}
+body .content main article .article-title3 {
+  background-color: #FFB6C1;
+}
+body .content main article p {
+  text-align: justify;
+  padding: 15px;
+}
 body footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: khaki;
+  background-color: #c6ecd8;
   height: 100px;
   border-top: 2px black solid;
   margin-top: 15px;
-  align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
@@ -38,107 +138,6 @@ body footer .footer-content {
 }
 body footer .footer-content #Name {
   font-weight: bold;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
-  align-items: center;
-}
-header .title {
-  margin-left: 15px;
-  font-weight: bold;
-  font-size: 32px;
-}
-header .nav-header {
-  flex-grow: 2;
-  align-self: flex-start;
-  display: flex;
-  justify-content: flex-end;
-}
-header .nav-header a {
-  margin: 0px 75px;
-}
-header .nav-header .menu-header #menu {
-  display: none;
-}
-
-main {
-  display: flex;
-  flex-direction: row;
-  margin: 15px;
-}
-main article {
-  display: flex;
-  flex-direction: column;
-  margin: 15px;
-  width: 100%;
-  border: 2px solid black;
-  align-items: flex-end;
-}
-main article .article-title {
-  height: 50px;
-  width: 50%;
-  font-size: 1.5em;
-  text-align: center;
-  background-color: khaki;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
-}
-main article p {
-  text-align: justify;
-  padding: 15px;
-}
-
-@media all and (max-width: 599px) {
-  main {
-    flex-wrap: wrap;
-  }
-
-  header {
-    justify-content: space-between;
-  }
-  header .title {
-    display: none;
-  }
-  header .nav-header a {
-    display: none;
-  }
-  header .nav-header .menu-header #menu {
-    display: block;
-  }
-
-  footer {
-    display: none;
-  }
-}
-@media (max-width: 1024px) and (min-width: 600px) {
-  header {
-    justify-content: space-between;
-  }
-  header .nav-header a {
-    display: none;
-  }
-  header .nav-header .menu-header #menu {
-    display: block;
-    justify-self: left;
-    flex-grow: 2;
-  }
-
-  main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  main article {
-    flex: 1 0 40%;
-  }
-
-  main article:first-child {
-    flex: 0 1 100%;
-  }
 }
 
 /*# sourceMappingURL=styleCSS.css.map */
