@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResponsiveDesign</title>
+    <link rel="stylesheet" href="./ResponsiveDesign_files/main.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <header>
+        <img src="./ResponsiveDesign_files/logo.jpeg" alt="ResponsiveDesign" width="75" height="75">
+        <p class="title">ResponsiveDesign</p>
+        <nav class="nav-header">
+          <a href="http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html#">Lorem</a>
+          <a href="http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html#">Ipsum</a>
+          <a href="http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html#">Dolor</a>
+          <a href="http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html#">Sit</a>
+          <a href="http://127.0.0.1:5500/Lab1/ResponsiveDesign/index.html#">Amet</a>
+          <div class="menu-header">
+            <img id="menu" src="./ResponsiveDesign_files/menu-icon.png" alt="Menu" width="75" height="75">
+          </div>
+
+        </nav>
+      </header>
+
+      <main>
+        <article class="article_1">
+            <h1 class="article-title">Lorem</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </article>
+
+        <article class="article_2">
+            <h1 class="article-title">Lorem</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </article>
+
+        <article class="article_3">
+            <h1 class="article-title">Lorem</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </article>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <p>Designed by</p>
+        <p id="Name">Michal Adamski</p>
+      </div>
+    </footer>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
